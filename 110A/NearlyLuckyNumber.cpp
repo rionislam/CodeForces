@@ -1,27 +1,45 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main(){
+int main() {
     string x;
-    cin>>x;
+    cin >> x;
+
     int s, f, o;
-    s=f=o=0;
-    for(int i = 0; i<x.length(); i++){
+    s = f = o = 0;
+
+    for (int i = 0; i < x.length(); i++) {
         char n = x[i];
-        if(n == '4'){
+        if (n == '4') {
             f++;
-        }else if(n == '7'){
+        } else if (n == '7') {
             s++;
-        }else{
+        } else {
             o++;
         }
     }
-    if(o==0 && s>0 && f>0){
-        cout<<"YES";
-    }else if(s+f == 4 || s+f == 7){
-        cout<<"YES";
-    }else{
-        cout<<"NO";
+
+    int luckyCount = s + f;
+    bool isLucky = true;
+
+    if (luckyCount == 0) {
+        isLucky = false;
+    } else {
+        int temp = luckyCount;
+        while (temp > 0) {
+            int digit = temp % 10;
+            if (digit != 4 && digit != 7) {
+                isLucky = false;
+                break;
+            }
+            temp /= 10;
+        }
+    }
+
+    if (isLucky) {
+        cout << "YES";
+    } else {
+        cout << "NO";
     }
 
     return 0;
