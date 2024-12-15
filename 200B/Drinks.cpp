@@ -12,7 +12,7 @@ int main(){
     }
 
     double a = (double)s/n;
-    cout<<setprecision(12)<<a;
+    cout<<fixed<<setprecision(12)<<a;
     return 0;
     
 }
