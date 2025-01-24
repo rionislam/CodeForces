@@ -12,7 +12,7 @@ int main(){
         min=m;
     }
 
-    if(n*m%2!=0 || n==1|| m==1){
+    if(min%2!=0){
         cout<<"Akshat"<<endl;
     }else{
         cout<<"Malvika"<<endl;
