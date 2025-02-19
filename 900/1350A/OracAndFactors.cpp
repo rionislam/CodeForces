@@ -26,7 +26,6 @@ int main(){
         long long n, k;
         cin>>n>>k;
 
-        cout<<smallestDevisor(n)<<endl;
         if(n%2==0){
             n += 2*k;
         }else{
