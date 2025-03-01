@@ -9,11 +9,11 @@ bool isPerfectSquare(long long num) {
 
 int main() {
     int t;
-    cin >> t;
+    cin>>t;
 
     while(t--) {
         int n;
-        cin >> n;
+        cin>>n;
         int p[n];
         long long prefixSum = 0;
         long long totalSum = 0;
@@ -24,36 +24,26 @@ int main() {
         }
 
         if (isPerfectSquare(totalSum)) {
-            cout << -1 << endl;
+            cout<<-1<<endl;
             continue;
         }
 
         bool isValid = true;
         for (int i = 0; i < n; i++) {
             if (isPerfectSquare(prefixSum + p[i])) {
-                bool swapped = false;
                 for (int j = i + 1; j < n; j++) {
                     if (!isPerfectSquare(prefixSum + p[j])) {
                         swap(p[i], p[j]);
-                        swapped = true;
                         break;
                     }
-                }
-                if (!swapped) {
-                    isValid = false;
-                    break;
                 }
             }
 
             prefixSum += p[i];
-            cout << p[i] << " ";
+            cout<<p[i]<<" ";
         }
 
-        if (!isValid) {
-            cout << -1 << endl;
-        } else {
-            cout << endl;
-        }
+        cout<<endl;
     }
 
     return 0;
