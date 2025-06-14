@@ -15,7 +15,7 @@ int main(){
             cout<<i<<" "<<1<<" "<<i<<endl;
         }
 
-        for (int i = 1; i < n; ++i) {
+        for (int i=1; i<n; i++) {
             cout<<i<<" "<<i+1<<" "<<n<<endl;
         }
     }
